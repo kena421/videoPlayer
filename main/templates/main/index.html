@@ -13,7 +13,16 @@
 <body>
     <h1> BOHOR </h1>
 
-  
+    <video width="320" height="240" autoplay controls>
+      <source src="{%static 'a.mp4' %}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Upload</button>
+    </form>
 
   <script src="https://vjs.zencdn.net/7.7.5/video.js"></script>
   <script src="{% static 'js/main.js' %}"></script>
